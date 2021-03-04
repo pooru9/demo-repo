@@ -1,0 +1,40 @@
+list1=[]
+x=int(input("enter the value of x:"))
+for i in range(0,x):
+	list1.append(input("enter the items:"))
+print(list1)
+list2=[]
+y=int(input("enter the value of y"))
+for i in range(0,y):
+	list2.append(input("enter the items:"))
+print(list2)
+while True:
+	print("1.repetation\n2.concatenation\n3.slicing\n4.reverse\n5.string membership\n6.iteration\n7.length\n8.maximum\n9.minimum\n10.deletion\n11.exit")
+	ch=int(input("enter your choice:"))
+	if ch==1:
+		l=int(input("enter how many times to repeat:"))
+		print("repetation of list1 is:",list1*l)
+	elif ch==2:
+		print("concatenaton of two lists are:",list1+list2)
+	elif ch==3:
+		l=int(input("enter the value to slice:"))
+		print("slicing of list is:",list1[l])
+	elif ch==4:
+		print("reverse of a list1 is:",list1[::-1])
+	elif ch==5:
+		print("string membership is:",("3" in list1))
+	elif ch==6:
+		print("iteration of list is:")
+		for i in list1:
+			print(i)
+	elif ch==7:
+		print("length of list1 is:",len(list1))
+	elif ch==8:
+		print("maximum of list1 is:",max(list1))
+	elif ch==9:
+		print("minimum of list2 is:",min(list2))
+	elif ch==10:
+		print("deletion of list1 is:")
+		del list1
+	else:
+		exit()
