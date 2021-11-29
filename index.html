@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOOKSTORE</title>
+    <meta charset="utf-8">
+    <title>Employee Attendance</title>
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/emp.js"></script>
+    <script src="src/view/createemp.js"></script>
+    <script>
+        window.addEventListener('load',init.view.createemp.setupUI);
+    </script>
 </head>
 <body>
-    <h1>BOOKSTORE MANAGEMENT</h1>
-    <menu>
-        <ul style="list-style-type: none; margin: 0; padding: 0">
-            <li style="margin-bottom: 1rem"> 
-                <a href="listBooks.html"><button type="button">List all books</button></a> 
-            </li>  
-            <li style="margin-bottom: 1rem"> 
-                <a href="createBook.html"><button type="button">Add new book</button></a> 
-            </li>
-            <li style="margin-bottom: 1rem"> 
-                <a href="updateBook.html"><button type="button">Update Details</button></a> 
-            </li>
-            <li style="margin-bottom: 1rem"> 
-                <a href="deleteBook.html"><button type="button">Delete book</button></a> 
-            </li>
-        </ul>
-    </menu>
+<h2>Eployee Attendance System</h2>
+<form id='Employee'>
+ <label>Name:</label><br>
+            <input type="text" placeholder="Name" id='t1' name="ename"/><br>
+        
+        <label>Employee Id:</label><br>
+            <input type="text" placeholder="Id" id='t2' name="eid"/><br>
+        <label>Department:</label><br>
+            <select  id='t3' name="dept">
+                <option value="MCA" selected>MCA</option>
+                <option value="CSE">CSE</option>
+                <option value="ISE">ISE</option>
+                <option value="Mech">Mech</option>
+            </select>
+            <br>
+
+        <label>Date:</label><br>
+            <input type="date" id='t4' name="dte"/>
+            <br>
+        <label>Attendance:</label>
+            <input type="radio" id='r1' name="attn">Present
+            <input type="radio" id='r1' name="attn">Absent
+
+
+            <br>
+                    <label>Reason for absence:</label><br>
+            <input type="text" placeholder="Absence" id='t5' name="abs"/><br>
+            <br>
+            <button type="button" name="commit">Save</button>
+            <hr><br>
+
+            <nav><a href="list.html"><button type="button" name="List">List</button></a></nav>
+</form>
+
 </body>
 </html>

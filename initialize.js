@@ -1,5 +1,5 @@
 let init = {
-    model: {},
+    model:{},
     view: {},
-    controller: {},
-};
+    controller:{}
+}

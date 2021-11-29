@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display list</title>
+    <script src="src/controller/initialize.js"></script>
+    <script src="src/model/emp.js"></script>
+    <script src="src/view/listEmp.js"></script>  
+    <script>
+        window.addEventListener('load',init.view.listEmp.setupUI);
+    </script>
+</head>
+<body>
+    <h1>Attendance</h1>
+    <table border="2" id="atn_tbl" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Attendance</th>
+                <th>Reason</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <br>
+    <nav><a href="index.html">Back to Home page</a></nav>
+</body>
+</html>
