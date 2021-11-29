@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Factory Function</title></head>
+<body>
+    <button onclick="myFun()">Invent</button>
+    <p>New array:<span id="demo"></span></p>
+</body>
+<script>
+var items= [
+{id:"A-1",name:"celling fan ",price:Number(prompt("enter price for celling fan")),qty:Number(prompt("enter quantity for celling fan")),total:6000},
+{id:"B-2",name :"table fan",price:Number(prompt("enter price for table fan")),qty:Number(prompt("enter quantity for table fan")),total:5500},
+{id:"c-3",name:"standing fan",price:Number(prompt("enter price for standing fan")),qty:Number(prompt("enter quantity for standing fan")),total:6800}
+];
+function getproduct(i){
+        var i = [i.id,i.name,i.price,i.qty,i.total];
+        return i;
+}
+function myFun(){
+    document.getElementById("demo").innerHTML=items.map(getproduct);
+}
+</script>
+</html>
+
