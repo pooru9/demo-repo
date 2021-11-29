@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{
+    background-color: rgb(37,63,50);
+    font-family: calibri,Helvetica, sans-serif;
+    color:rgb(209,208,127);
+    font-weight: bolder;
+}
+.container{
+    padding: 80px;
+    background-image: url("m.jpg");
+}
+input[type=text],input[type=password],input[type=number],textarea{
+    width:50%;
+    padding: 10px;
+    margin:5px 0 22px 0;
+    display:inline-block;
+    border:none;
+    background:#797373;
+}
+input[type=text]:focus,input[type=password]:focus,input[type=number]:focus{
+    background-color: rgb(114,93,53);
+    outline:none;
+}
+div{
+    padding:10px 0;
+}
+hr{
+    border:1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+.resgisterbtn{
+    background-color: #3f0324;
+    color:rgb(252,251,255);
+    padding: 16px 20px;
+    margin:8px 0;
+    border:none;
+    cursor:pointer;
+    width:50%;
+    opacity:0.9;
+}
+.resgisterbtn:hover{
+    opacity:1;
+}
+</style>
+</head>
+<body>
+    <form><div class="container"><hr><hr>
+    <center><h1>&emsp;&emsp;&emsp;&emsp;MUSIC FAIRY REGISTRATION</h1></center><hr><hr>
+    <label>First Name:</label><br>
+    <input type="text" name="firstname" placeholder="Firstname" size="15" required pattern="[A-Za-z]+"/><br>
+    <label>Last Name:</label><br>
+    <input type="text" name="lastname" placeholder="lastname" size="15" required pattern="[A-Za-z]+"/><br>
+<div>
+    <label>Instrument Type:</label>
+    <select required>
+        <option value="course">---</option>
+        <option value="guitar">Guitar</option>
+        <option value="keyboard">keyboard</option>
+        <option value="piano">piano</option>
+        <option value="violin">violin</option>
+        <option value="drums">Drums</option>
+        <option value="flute">Flute</option>
+    </select>
+</div>    
+<div><br>
+<label>Gender</label><br>
+<input type="radio" value="Male" name="gender" checked>Male
+<input type="radio" value="Female" name="gender">Female
+<input type="radio" value="other" name="gender">Others
+</div><br>
+<label>Age:</label><br>
+<input type="number" name="age" id="age" placeholder="age" min="10" max="60" required/><br>
+<label>Phone:</label><br>
+<input type="text" name="phone" placeholder="phone_no" size="10" id="pno" pattern="[1-9]{1}[0-9]{9}" required><br>
+Address:<br>
+<textarea cols="60" rows="5" placeholder="current address" value="address" required></textarea> <br>
+<label for="email"><b>Email:</b></label><br>
+<input type="text" placeholder="Email" name="enter email" id="email" pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$1" required><br>
+<label for="psw"><b>Password:</b></label><br>
+<input type="password" placeholder="enter password" name="psw" id="password" minlength="8"required><br>
+<label for="psw-repeat"><b>Re-type Password:</b></label><br>
+<input type="password" placeholder="Re-type Password" name="psw-repeat" id="password1" minlength="8" required><br><hr>
+<button type="submit" class="resgisterbtn">Register</button>
+</form>
+<script>
+    const age=document.getElementById("age");
+        age.addEventListener("input",()=>{
+            age.setCustomValidity("");
+            age.checkValidity();
+             });
+             age.addEventListener("invalid",()=>{
+                 if(age.Validity.rangeOverflow){
+                     age.setCustomValidity("age should be<60")}
+                     else if(age.Validity.rangeUnderflow){
+                         age.setCustomValidity("age should be>10")
+                     }
+                     else{
+                         age.setCustomValidity("enter a valid age")
+                     }
+                 }
+             );
+
+                 const nameInput=document.querySelector("input");
+                 nameInput.addEventListener('input',()=>{
+                     nameInput.setCustomValidity('');
+                     name.checkValidity();
+                 });
+                 nameInput.addEventListener('invalid',()=>{
+                     if(nameInput.value===""){
+                         nameInput.setCustomValidity("enter your first name");}
+                        else{
+                            nameInput.setCustomValidity("user names can only contain upper and lowercase letter");
+                        }
+                 });
+
+                 var lastname=document.getElementById('lastname');
+                 lastname.addEventListener('input',()=>{
+                     lastname.setCustomValidity('');
+                     lastname.checkValidity();
+                 });
+                 lastname.addEventListener('invalid',()=>{
+                     if(lastname.value===""){
+                         lastname.setCustomValidity('enter your last name');
+            
+                     }
+                     else{
+                         lastname.setCustomValidity('user names can only contain only upper and lowercase letter');
+                     }
+                 });
+            var pno=document.getElementById('pno');
+            pno.addEventListener('input',()=>{
+                pno.setCustomValidity('');
+                pno.checkValidity();
+            });
+            pno.addEventListener('invalid',()=>{
+                if(pno.value===""){
+                    pno.setCustomValidity('enter phone number');
+                }
+                else{
+                    pno.setCustomValidity('enter 10 digit phone number');
+                }
+            });
+             
+            var email=document.getElementById('email');
+            email.addEventListener('input',()=>{
+                email.setCustomValidity('');
+                email.checkValidity();
+            });
+
+            var password=document.getElementById('password');
+            password.addEventListener('input',()=>{
+                password.setCustomValidity('');
+                password.checkValidity();
+            });
+            password.addEventListener('invalid',()=>{
+                if(password.value===""){
+                    password.setCustomValidity('enter password');
+                }
+                else
+                {
+                    password.setCustomValidity('minimum 8 character required');
+                }
+            });
+
+            var password1=document.getElementById('password1');
+            password1.addEventListener('input',()=>{
+                password1.setCustomValidity('');
+                password1.checkValidity();
+            });
+            password1.addEventListener('invalid',()=>{
+                if(password1.value===""){
+                    password1.setCustomValidity('enter password');
+                }
+                else if(password1.value!="password.value")
+                {
+                    password1.setCustomValidity('incorrect password');
+                }
+                else{
+                    password1.setCustomValidity('minimum 8 characters password required');
+                }
+            });
+</script>
+</body>
+</html>
