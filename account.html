@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Products-ReFurno</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body style="background: #3d506b;">
+
+    <div class="container">
+        <div class="navbar" ">
+            <div class="logo">
+                <h2 style="color: white;">ReFurno</h2>
+            </div>
+            <nav>                
+                <ul id="MenuItem">
+                    <li><a href="index.html" style="color: white;">Home</a></li>
+                    <li><a href="products.html" style="color: white;">Products</a></li>
+                    <li><a href="#ftr" style="color: white;">About</a></li>
+                    <li><a href="cart.html" style="color: white;">Cart <span style="color:red;background: white; font-size: 20px;"> 0</span></a></li>
+                    <li><a href="#" style="color: white;">Login</a></li>
+                </ul>
+            </nav>
+            <img src="./img/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+<!-- Account Page-->  
+  
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+            <img src="./img/bg.jpg">
+            </div>
+
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="Indicator">
+                    </div>
+                    <form id="LoginForm">
+                        <input type="text" id="t1" placeholder="Username">
+                        <input type="password" id="t2" placeholder="Password">
+                        <button type="Submit" class="btn" onclick="check()">Login</button>
+                        <a href="#">Forgot Password</a>
+                    </form>
+
+                    <form id="RegForm">
+                        <input type="text" id="t3" placeholder="Mobile Number" pattern="[1-9]{1}[0-9]{9}" required>
+                        <input type="email" id="t4" placeholder="Email" pattern="/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/" required>
+                        <input type="text" id="t5" placeholder="Username" pattern="[A-Za-z]+" required>
+                        <input type="password" id="t6" placeholder="Password" minlength="6" required>
+                        <button type="Submit" class="btn" onclick="store()">Register</button> 
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var num = document.getElementById('t3');
+    num.addEventListener('input',()=>{
+    num.setCustomValidity('');
+    num.checkValidity();
+    });
+    num.addEventListener('invalid', () => { 
+      if (num.value === '') {
+          num.setCustomValidity('Enter phone number'); 
+      } else {
+          num.setCustomValidity('Enter 10 digit phone number');
+      }
+    });
+
+    var email = document.getElementById('t4');
+    email.addEventListener('input',()=>{
+    email.setCustomValidity('');
+    email.checkValidity();
+    });
+    email.addEventListener('invalid', () => { 
+      if (email.value === '') {
+          email.setCustomValidity('Enter Email Id'); 
+      } else {
+          email.setCustomValidity('enter the pattern bhoomika@gmail.com');
+      }
+    });
+
+    var name1 = document.getElementById('t5');
+    name1.addEventListener('input',()=>{
+    name1.setCustomValidity('');
+    name1.checkValidity();
+    });
+    name1.addEventListener('invalid', () => { 
+      if (name1.value === '') {
+          name1.setCustomValidity('Enter your Name!'); 
+      } else {
+          name1.setCustomValidity('Usernames can only contain upper and lowercase letter');
+      }
+    });
+
+    var password = document.getElementById('t2');
+    password.addEventListener('input',()=>{
+    password.setCustomValidity('');
+    password.checkValidity();
+    });
+    password.addEventListener('invalid', () => { 
+      if (password.value === '') {
+          password.setCustomValidity('Enter Password'); 
+      } else {
+          password.setCustomValidity('Minimum 6 characters password required');
+      }
+    });
+</script>
+
+<!---Footer--->
+<div class="footer" id="ftr">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download app for IOS And Android</p>
+                <div class="app-logo">
+                    <a href="#"><img src="./img/app-store.png"></a>
+                    <a href="#"><img src="./img/play-store.png"></a>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Coupon</a></li>
+                    <li>Return Policy</li>
+                    <li>Affiliate</li>
+                    <li>Our Shops</li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3>Follow Us On</h3>
+                <ul>
+                    <a href="#"><li><i class="fa fa-facebook" ></i></li></a>
+                    <a href="#"><li><i class="fa fa-instagram"></i></li></a>
+                    <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                    <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                </ul>
+            </div>
+             <div class="footer-col-4">
+                <h3>Contact</h3>
+                <address>
+                        ReFurno Sales<br>
+                        3rd Main, 2nd Cross<br>
+                        City Complex,RR Nagar<br>
+                        Bangalore-560056<br>
+                </address>
+            </div>
+        </div>  
+        <hr>
+        <p class="copyright">Copyright 2021 - ReFurno</p>
+    </div>
+</div>
+</div>
+
+
+
+<!----Script----->
+<script>
+    var MenuItem=document.getElementById("MenuItem");
+    MenuItem.style.maxHeight="0px";
+    function menutoggle() {
+        if(MenuItem.style.maxHeight=="0px")
+        {
+            MenuItem.style.maxHeight="230px";
+        }
+        else
+        {
+            MenuItem.style.maxHeight="0px";
+        }
+
+    }
+</script>
+
+<script>
+    var LoginForm= document.getElementById("LoginForm");
+    var RegForm= document.getElementById("RegForm");
+    var Indicator= document.getElementById("Indicator")
+    function register(){
+        RegForm.style.transform="translateX(0px)";
+        LoginForm.style.transform="translateX(0px)";
+        Indicator.style.transform="translateX(115px)";
+    }
+
+    function login(){
+        RegForm.style.transform="translateX(300px)";
+        LoginForm.style.transform="translateX(300px)";
+        Indicator.style.transform="translateX(10px)";
+    }
+</script>
+<script src="main.js"></script>
+<script src="accnt.js"></script>
+</body>
+</html>

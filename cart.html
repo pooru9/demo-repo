@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Products-ReFurno</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body style="background: #3d506b;">
+
+    <div class="container">
+        <div class="navbar" ">
+            <div class="logo">
+                <h2 style="color: white;">ReFurno</h2>
+            </div>
+            <nav>                
+                <ul id="MenuItem">
+                    <li><a href="index.html" style="color: white;">Home</a></li>
+                    <li><a href="products.html" style="color: white;">Products</a></li>
+                    <li><a href="#ftr" style="color: white;">About</a></li>
+                    <li><a href="#" style="color: white;">Cart <span style="color:red;background: white; font-size: 20px;"> 0</span></a></li>
+                    <li><a href="account.html" style="color: white;">Login</a></li>
+                </ul>
+            </nav>
+            <img src="./img/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+<!-- Cart Page-->  
+      <div class="container-cart">
+        <div class="row">
+            <div class="displayItem">
+                <div class="item"><h2>Items</h2></div> 
+                <div class="names"><h2>Name</h2></div> 
+                <div class="prices"><h2>Price</h2></div>
+                <div class="quantity"><h2>Quantity</h2></div>
+                <div class="total"><h2>Total</h2></div>             
+            </div>
+
+           
+            <div class="cartdisp"></div>
+
+            <div class="totalPriceCart">
+                <div class="subtotal">Subtotal</div>
+                <div class="priceView">
+                    <h2>00</h2> 
+
+
+                   
+                </div>
+            </div>
+            
+        </div>
+        <hr style="margin-top: 20px;">
+        <h2 style="color:white;top: 5%;left: 10%;">Proceed To CheckOut</h2><br>
+        <div class="row" style="width: 100%;height: 300px;">
+            
+            <div class="col-4">
+                <div class="payment" style="font-size: 18px; color: white;" >
+                    <label style="font-size: 25px;">Payment Method</label><br>
+                    <input type="radio" name="ptm"> COD<br>
+                    <input type="radio" name="ptm"> Paytm<br>
+                    <input type="radio" name="ptm"> Phonepe<br>
+                </div>
+            </div>
+            <div class="col-4">
+                <button class="orbtn">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+<!---Footer--->
+<div class="footer" id="ftr" style="width: 100%;">
+    <div class="container" >
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download app for IOS And Android</p>
+                <div class="app-logo">
+                    <a href="#"><img src="./img/app-store.png"></a>
+                    <a href="#"><img src="./img/play-store.png"></a>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Coupon</a></li>
+                    <li>Return Policy</li>
+                    <li>Affiliate</li>
+                    <li>Our Shops</li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3>Follow Us On</h3>
+                <ul>
+                    <a href="#"><li><i class="fa fa-facebook" ></i></li></a>
+                    <a href="#"><li><i class="fa fa-instagram"></i></li></a>
+                    <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                    <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                </ul>
+            </div>
+             <div class="footer-col-4">
+                <h3>Contact</h3>
+                <address>
+                        ReFurno Sales<br>
+                        3rd Main, 2nd Cross<br>
+                        City Complex,RR Nagar<br>
+                        Bangalore-560056<br>
+                </address>
+            </div>
+        </div>  
+        <hr>
+        <p class="copyright">Copyright 2021 - ReFurno</p>
+    </div>
+</div>
+</div>
+
+
+
+<!----Script----->
+<script>
+    var MenuItem=document.getElementById("MenuItem");
+    MenuItem.style.maxHeight="0px";
+    function menutoggle() {
+        if(MenuItem.style.maxHeight=="0px")
+        {
+            MenuItem.style.maxHeight="230px";
+        }
+        else
+        {
+            MenuItem.style.maxHeight="0px";
+        }
+
+    }
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>

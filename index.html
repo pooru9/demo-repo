@@ -1,49 +1,211 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Employee Attendance</title>
-    <script src="src/controller/initialize.js"></script>
-    <script src="src/model/emp.js"></script>
-    <script src="src/view/createemp.js"></script>
-    <script>
-        window.addEventListener('load',init.view.createemp.setupUI);
-    </script>
-</head>
-<body>
-<h2>Eployee Attendance System</h2>
-<form id='Employee'>
- <label>Name:</label><br>
-            <input type="text" placeholder="Name" id='t1' name="ename"/><br>
-        
-        <label>Employee Id:</label><br>
-            <input type="text" placeholder="Id" id='t2' name="eid"/><br>
-        <label>Department:</label><br>
-            <select  id='t3' name="dept">
-                <option value="MCA" selected>MCA</option>
-                <option value="CSE">CSE</option>
-                <option value="ISE">ISE</option>
-                <option value="Mech">Mech</option>
-            </select>
-            <br>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>ReFurno</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <label>Date:</label><br>
-            <input type="date" id='t4' name="dte"/>
-            <br>
-        <label>Attendance:</label>
-            <input type="radio" id='r1' name="attn">Present
-            <input type="radio" id='r1' name="attn">Absent
+    </head>
+    <body>
+    <div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h2>ReFurno</h2>
+            </div>
+            <nav>                
+                <ul id="MenuItem">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#cat">Categories</a></li>
+                    <li><a href="#pro">Products</a></li>
+                    <li><a href="#ftr">About</a></li>
+                    <li><a href="cart.html">Cart <span style="color:red;background: white; font-size: 20px;"> 0</span></a></li>
+                    <li><a href="account.html">Login</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="search" class="srch" placeholder="Type To Search" name="">
+                <a href="#"><button class="src-btn">Search</button></a>
+            </div>
+            <img src="./img/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1>Buy New Furniture <br>This summer</h1>
+                <a href="products.html" class="btn">Shop Now &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="./img/bg.jpg" alt="Sofa">
+            </div>
+        </div>
+    </div>
+    </div> 
+<!-- Categories-->  
+
+<div class="categories" id="cat">
+    <div class="small-container">
+        <h2 class="title1">Categories</h2>
+        <div class="row">
+            <div class="col-3">
+                <img src="./img/p1.jpg">
+                <div class="content">
+                    <h2>Chairs</h2>
+                    <a href="./products.html#cp1">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-3">
+                <img src="./img/sofa.jpg">
+                 <div class="content">
+                    <h2>Sofas</h2>
+                    <a href="./products.html#cp2">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-3">
+                <img src="./img/table.jpg">
+                 <div class="content">
+                    <h2>Tables</h2>
+                    <a href="./products.html#cp3">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>  
+<!--Products-->
+<div class="small-container" id="pro">
+    <h2 class="title1">Featured Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <a href="./products.html#cp1">
+                <img src="./img/p2.jpg">
+                <h4>Blue Chair</h4>
+            </a>
+            <p>₹1500</p>
+            <div class="rating">
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star-o" ></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <a href="./products.html#cp3">
+                <img src="./img/table2.jpg">
+                <h4>Dinner Table</h4>
+            </a>
+            <p>₹2800</p>
+            <div class="rating">
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star-half-o" ></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <a href="./products.html#cp2">
+                <img src="./img/sofa.jpg">
+                <h4>Fabric Sofa</h4>
+            </a>
+            <p>₹13000</p>
+            <div class="rating">
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <a href="./products.html#cp1">
+                <img src="./img/p5.jpg">
+                <h4>Thin Black Chair</h4>
+            </a> 
+            <p>₹1200</p>
+            <div class="rating">
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star-half-o" ></i>
+            <i class="fa fa-star-o" ></i>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
-            <br>
-                    <label>Reason for absence:</label><br>
-            <input type="text" placeholder="Absence" id='t5' name="abs"/><br>
-            <br>
-            <button type="button" name="commit">Save</button>
-            <hr><br>
+<!---Footer--->
+<div class="footer" id="ftr">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download app for IOS And Android</p>
+                <div class="app-logo">
+                    <a href="#"><img src="./img/app-store.png"></a>
+                    <a href="#"><img src="./img/play-store.png"></a>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <h3>Useful Links</h3>
+                <ul>
+                    <a href="#"><li>Coupon</li></a>
+                    <a href="#"><li>Return Policy</li></a>
+                    <a href="#"><li>Affiliate</li></a>
+                    <a href="#"><li>Our Shops</li></a>
+                </ul>
+            </div>  
+            <div class="footer-col-3">
+                <h3>Follow Us On</h3>
+                <ul>
+                    <a href="#"><li><i class="fa fa-facebook" ></i></li></a>
+                    <a href="#"><li><i class="fa fa-instagram"></i></li></a>
+                    <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                    <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                </ul>
+            </div>
+             <div class="footer-col-4">
+                <h3>Contact</h3>
+                <address>
+                        ReFurno Sales<br>
+                        3rd Main, 2nd Cross<br>
+                        City Complex,RR Nagar<br>
+                        Bangalore-560056<br>
+                </address>
+            </div>
+        </div>  
+        <hr>
+        <p class="copyright">Copyright 2021 - ReFurno</p>
+    </div>
+</div>
+</div>
 
-            <nav><a href="list.html"><button type="button" name="List">List</button></a></nav>
-</form>
 
+
+<!----Script----->
+<script>
+    var MenuItem=document.getElementById("MenuItem");
+    MenuItem.style.maxHeight="0px";
+    function menutoggle() {
+        if(MenuItem.style.maxHeight=="0px")
+        {
+            MenuItem.style.maxHeight="230px";
+        }
+        else
+        {
+            MenuItem.style.maxHeight="0px";
+        }
+
+    }
+
+
+</script>
+<script src="main.js"></script>
 </body>
 </html>
