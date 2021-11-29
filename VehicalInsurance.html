@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>validation</title>
+<link rel="stylesheet" href="form-style.css">
+<script>
+   
+function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+function validateForm() { 
+    var cID = document.contactForm.cID.value;
+    var Name= document.contactForm.Name.value;
+    var Mobile = document.contactForm.Mobile.value;
+    var Address = document.contactForm.Address.value;
+    var Age = document.contactForm.Age.value;
+    var Email = document.contactForm.Email.value;
+    var Vehical_type = document.contactForm.Vehical_type.value;
+    var Vehical_no = document.contactForm.Vehical_no.value;
+    var Licence_no = document.contactForm.Licence_no.value;
+    var Insurance_type = document.contactForm.Insurance_type.value;
+    var Adhar_no = document.contactForm.Adhar_no.value;
+    }
+    
+    var cIDErr = NameErr = EmailErr = MobileErr = AddressErr = AgeErr = Vehical_typeErr = Vehical_noErr = License_noErr = Insurance_typeErr = Adhar_noErr=true;
+    if(cID == ""){
+    printError("cIDErr","Please enter customer Id");
+    }
+else{
+    var regex = /^[0-9]\d{4}$/;                
+        if(regex.test(cID) === false) {
+            printError("cIDErr", "Please enter a valid id");
+        } else {
+            printError("cIDErr", "");
+            cIDErr = false;
+        }
+}
+    if(Name == "") {
+        printError("NameErr", "Please enter your name");
+    } else {
+        var regex = /^[a-zA-Z\s]+$/;                
+        if(regex.test(Name) === false) {
+            printError("NameErr", "Please enter a valid name");
+        } else {
+            printError("NameErr", "");
+            NameErr = false;
+        }
+    }
+    
+    if(Email == " ") {
+        printError("EmailErr", "Please enter your email address");
+    } else {
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(Email) === false) {
+            printError("EmailErr", "Please enter a valid email address");
+        } else{
+            printError("EmailErr", "");
+            EmailErr = false;
+        }
+    }
+    
+    if(Mobile == " ") {
+        printError("MobileErr", "Please enter your mobile number");
+    } else {
+        var regex = /^[1-9]\d{10}$/;
+        if(regex.test(Mobile) === false) {
+            printError("MobileErr", "Please enter a valid 10 digit mobile number");
+        } else{
+            printError("MobileErr", "");
+            MobileErr = false;
+        }
+    }
+    if(Adhar_no == " ") {
+        printError("Adhar_noErr", "Please enter your Adhar number");
+    } else {
+        var regex = /^[1-9]\d{12}$/;
+        if(regex.test(Adhar_no) === false) {
+            printError("Adhar_noErr", "Please enter a valid 12 digit number");
+        } else{
+            printError("Adhar_noErr", "");
+            Adhar_noErr = false;
+        }
+    }
+    
+    
+    
+    if(Vehical_type == "") {
+        printError("vehical_typeErr", "Please select your vehical");
+    } else {
+        printError("vehical_typeErr", "");
+        vehical_typeErr = false;
+    }
+
+
+    if(Vehical_no== "") {
+        printError("Vehical_noErr", "Please enter your vehical number");
+    } else {
+        var regex = /^[A-ZA-Z0-90-90-9]{5}$/;
+        if(regex.test(Vehical_no) === false) {
+            printError("Vehical_noErr", "Please enter a  vehical number");
+        } else{
+            printError("Vehical_noErr", "");
+            Vehical_noErr = false;
+        }
+    }
+
+
+    if(Licence_no== "") {
+        printError("Licence_noErr", "Please enter your licence number");
+    } else {
+        var regex = /^[a-zA-Z0-90-90-9]{5}$/;
+        if(regex.test(Licence_no) === false) {
+            printError("Licence_noErr", "Please enter a valid  vehical number");
+        } else{
+            printError("Licence_noErr", "");
+            Licence_noErr = false;
+        }
+    }
+    if((cIDErr || NameErr || AddressErr || AgeErr || EmailErr || MobileErr || Vehical_typeErr || Vehical_noErr || Licence_noErr) == true) {
+       return false;
+    } else {
+        var dataPreview = "You've entered the following details: \n" +
+                          "cID: " + cID + "\n"
+                          "Name: " + Name + "\n" +
+                          "Address : "  + Address + "\n" +
+                          "Email : " + Email + "\n" +
+                          "Mobile Number: " + Mobile + "\n" +
+                          "Vehical number: " + Vehical_no + "\n" +
+                          "licence number: "  +Licence_no + "\n" +
+                          "Type of Vehical: " + Vehical_type + "\n";
+        
+                         "Insurance: " + Insurance_type + "\n";
+        alert(dataPreview);
+    };
+    
+</script>
+</head>
+<body>
+<form name="contactForm" onsubmit="return validateForm()" action="" method="post">
+    <h2>Insurance Form</h2>
+    <div class="row">
+        <label>CustomerID</label>
+        <input type="text" name="cID">
+        <div class="error" id="cIDErr"></div>
+    </div>
+    <div class="row">
+        <label>Name</label>
+        <input type="text" name="Name">
+        <div class="error" id="NameErr"></div>
+    </div>
+    <div class="row">
+        <label>Email</label>
+        <input type="email" name="Email">
+        <div class="error" id="EmailErr"></div>
+    </div>
+    <div class="row">
+        <label>Address</label>
+        <input type="text" name="Address">
+        <div class="error" id="AddressErr"></div>
+    </div>
+    <div class="row">
+        <label>Age</label>
+        <input type="number" name="Age">
+        <div class="error" id="AgeErr"></div>
+    </div>
+
+    <div class="row">
+        <label>Mobile Number</label><select>
+            <option>+91</option><option>+1</option>
+        </select>
+        <input type="phone" name="Mobile" maxlength="10">
+        <div class="error" id="mobileErr"></div>
+    </div>
+    <div class="row">
+        <label>Vehical_type</label><br>
+        <input type="radio" name="type">Two wheeler<br>
+        <input type="radio" name="type">Three wheeler<br>
+        <input type="radio" name="type">Four wheeler<br>
+        <input type="radio" name="type">Ten wheeler<br>
+        <div class="error" id="Vehical_typeErr"></div>
+    </div>
+    <div class="row">
+        <label>Vehical_no</label>
+        <input type="text" name="Vehical_no">
+        <div class="error" id="Vehical_noErr"></div>
+    </div>
+    <div class="row">
+        <label>License_no</label>
+        <input type="number" name="License_no">
+        <div class="error" id="License_noErr"></div>
+    </div>
+    <div class="row">
+        <label>Insurance_type</label><br>
+        <input type="radio" name="type">Third Party<br>
+        <input type="radio" name="type">Comprehensive<br>
+        <div class="error" id="Insurance_typeErr"></div>
+    </div>
+    <div class="row">
+        <label>Adhar_no</label>
+        <input type="number" name="Adhar_no">
+        <div class="error" id="Adhar_noErr"></div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+</body>
+</html>
